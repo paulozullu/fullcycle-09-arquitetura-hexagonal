@@ -25,8 +25,10 @@ func Run(
 
 	case "enable":
 		product, err := service.Get(productId)
+		if err != nil {
+			return "", err
+		}
 		res, err := service.Enable(product)
-
 		if err != nil {
 			return "", err
 		}
@@ -34,8 +36,10 @@ func Run(
 
 	case "disable":
 		product, err := service.Get(productId)
+		if err != nil {
+			return "", err
+		}
 		res, err := service.Disable(product)
-
 		if err != nil {
 			return "", err
 		}
