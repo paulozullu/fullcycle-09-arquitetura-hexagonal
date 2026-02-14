@@ -6,7 +6,12 @@ import (
 	"github.com/paulozullu/09-arquitetura-hexagonal/application"
 )
 
-func Run(service application.ProductServiceInterface, action string, productId string, productName string, price float64) (string, error) {
+func Run(
+	service application.ProductServiceInterface,
+	action string,
+	productId string,
+	productName string,
+	price float64) (string, error) {
 	var result = ""
 
 	switch action {
