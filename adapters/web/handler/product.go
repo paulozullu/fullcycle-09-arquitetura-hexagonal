@@ -15,7 +15,7 @@ func MakeProductHandlers(r *mux.Router, n *negroni.Negroni, service application.
 		negroni.Wrap(getProduct(service)),
 	)).Methods("GET", "OPTIONS")
 
-	r.Handle("/product/", n.With(
+	r.Handle("/product", n.With(
 		negroni.Wrap(createProduct(service)),
 	)).Methods("POST", "OPTIONS")
 }
